@@ -60,6 +60,7 @@ export default function Navbar({ setSection }: any) {
                 onClick={() => {
                   setSection(link.value)
                   setActive(link.value)
+                  window.scrollTo({ top: 0 })
                 }}
                 className="relative text-gray-300 hover:text-white transition"
               >
@@ -92,6 +93,7 @@ export default function Navbar({ setSection }: any) {
                   setSection(link.value)
                   setActive(link.value)
                   setMenuOpen(false)
+                  window.scrollTo({ top: 0 })
                 }}
                 className="text-gray-300 hover:text-white text-left"
               >

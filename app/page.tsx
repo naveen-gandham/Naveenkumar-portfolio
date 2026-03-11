@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
@@ -25,6 +25,10 @@ import ScrollProgress from "../components/ScrollProgress"
 export default function Home() {
 
   const [section, setSection] = useState("")
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [section])
+
 
   return (
     <main className="relative bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen">

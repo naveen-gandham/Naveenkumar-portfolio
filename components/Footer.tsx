@@ -47,13 +47,6 @@ export default function Footer() {
             <FaEnvelope />
           </a>
 
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            className="hover:text-white transition"
-          >
-            <FaFileDownload />
-          </a>
 
         </div>
 

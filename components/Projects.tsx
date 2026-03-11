@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 type Project = {
   title: string
@@ -84,7 +85,6 @@ export default function Projects() {
 
   ]
 
-
   return (
 
     <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
@@ -95,14 +95,16 @@ export default function Projects() {
 
       {/* Project Cards */}
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
 
         {projects.map((project, index) => (
 
-          <div
+          <motion.div
             key={index}
             onClick={() => setSelectedProject(project)}
-            className="cursor-pointer bg-gray-900 rounded-xl overflow-hidden md:hover:scale-105 transition transform duration-300 shadow-lg"
+            whileHover={{ scale: 1.05, y: -8 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="cursor-pointer bg-gray-900 rounded-xl overflow-hidden shadow-lg group"
           >
 
             <Image
@@ -115,13 +117,30 @@ export default function Projects() {
 
             <div className="p-5 md:p-6">
 
-              <h3 className="text-base md:text-lg font-semibold">
+              <h3 className="text-base md:text-lg font-semibold mb-3">
                 {project.title}
               </h3>
 
+              {/* Tech preview on hover */}
+
+              <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                {project.technologies.slice(0,3).map((tech, index) => (
+
+                  <span
+                    key={index}
+                    className="bg-red-600 text-xs px-2 py-1 rounded"
+                  >
+                    {tech}
+                  </span>
+
+                ))}
+
+              </div>
+
             </div>
 
-          </div>
+          </motion.div>
 
         ))}
 
@@ -134,7 +153,12 @@ export default function Projects() {
 
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4">
 
-          <div className="bg-gray-900 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+            className="bg-gray-900 rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative"
+          >
 
             {/* Close button */}
 
@@ -144,7 +168,6 @@ export default function Projects() {
             >
               ✕
             </button>
-
 
             <Image
               src={selectedProject.image}
@@ -157,9 +180,6 @@ export default function Projects() {
             <h3 className="text-xl md:text-2xl font-bold mb-6">
               {selectedProject.title}
             </h3>
-
-
-            {/* Architecture flow */}
 
             <div className="space-y-6">
 
@@ -181,7 +201,6 @@ export default function Projects() {
                 </p>
               </div>
 
-
               <div>
                 <h4 className="text-red-500 font-semibold mb-2">
                   Technologies Used
@@ -202,7 +221,6 @@ export default function Projects() {
 
               </div>
 
-
               <div>
                 <h4 className="text-red-500 font-semibold mb-2">
                   Result
@@ -214,7 +232,7 @@ export default function Projects() {
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 

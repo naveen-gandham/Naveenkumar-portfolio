@@ -74,23 +74,23 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12">
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-red-500">
-  <Counter end={3000} />+
-</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-red-500">
+                <Counter end={3000} />+
+              </h3>
               <p className="text-gray-400 text-sm">Students Trained</p>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-red-500">
-  <Counter end={4.6} decimals={1} /> / 5
-</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-red-500">
+                <Counter end={4.6} decimals={1} /> / 5
+              </h3>
               <p className="text-gray-400 text-sm">Student Rating</p>
             </div>
 
             <div>
-             <h3 className="text-xl md:text-2xl font-bold text-red-500">
-  <Counter end={3} />+
-</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-red-500">
+                <Counter end={3} />+
+              </h3>
               <p className="text-gray-400 text-sm">Industry Roles</p>
             </div>
 
@@ -101,52 +101,55 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
 
-{/* RIGHT SIDE */}
+        <div className="flex justify-center md:justify-end mt-10 md:mt-0">
 
-<div className="flex justify-center md:justify-end mt-10 md:mt-0">
+          {/* THIS IS THE ONLY MODIFIED DIV */}
+          <div
+            className="relative flex items-center justify-center"
+            onMouseEnter={() => window.dispatchEvent(new Event("hero-focus"))}
+            onMouseLeave={() => window.dispatchEvent(new Event("hero-blur"))}
+          >
 
-  <div className="relative flex items-center justify-center">
+            {/* Status Badge */}
+            <div className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full backdrop-blur-sm animate-pulse whitespace-nowrap">
+              🟢 Open to Opportunities
+            </div>
 
-    {/* Status Badge */}
-    <div className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full backdrop-blur-sm animate-pulse whitespace-nowrap">
-      🟢 Open to Opportunities
-    </div>
+            {/* Glow background */}
+            <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
 
-    {/* Glow background */}
-    <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
+            {/* Card */}
+            <div
+              className="
+                relative
+                z-10
+                backdrop-blur-sm
+                bg-white/5
+                border border-gray-700
+                rounded-2xl
+                p-4
+                shadow-[0_20px_80px_rgba(255,0,0,0.25)]
+                transition duration-300
+                hover:scale-105
+                hover:shadow-[0_30px_100px_rgba(255,0,0,0.4)]
+              "
+            >
 
-    {/* Card */}
-    <div
-      className="
-        relative
-        z-10
-        backdrop-blur-sm
-        bg-white/5
-        border border-gray-700
-        rounded-2xl
-        p-4
-        shadow-[0_20px_80px_rgba(255,0,0,0.25)]
-        transition duration-300
-        hover:scale-105
-        hover:shadow-[0_30px_100px_rgba(255,0,0,0.4)]
-      "
-    >
+              {/* Profile Image */}
+              <Image
+                src="/passport.jpg"
+                alt="Naveen Kumar Gandham"
+                width={260}
+                height={260}
+                priority
+                className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
+              />
 
-      {/* Profile Image */}
-      <Image
-        src="/passport.jpg"
-        alt="Naveen Kumar Gandham"
-        width={260}
-        height={260}
-        priority
-        className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
-      />
+            </div>
 
-    </div>
+          </div>
 
-  </div>
-
-</div>
+        </div>
 
       </div>
 

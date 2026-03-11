@@ -101,7 +101,7 @@ export default function Hero() {
   <div className="relative flex items-center justify-center">
 
     {/* Status Badge */}
-    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-xs px-3 py-1 rounded-full backdrop-blur-sm animate-pulse">
+    <div className="absolute -top-6 md:-top-10 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full backdrop-blur-sm animate-pulse whitespace-nowrap">
       🟢 Open to Opportunities
     </div>
 

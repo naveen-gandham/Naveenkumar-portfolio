@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react"
+
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import Impact from "../components/Impact"
@@ -16,48 +18,99 @@ import Achievements from "../components/Achievements"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 import ParticlesBackground from "../components/ParticlesBackground"
+import PageTransition from "../components/PageTransition"
 import GridBackground from "../components/GridBackground"
 
 export default function Home() {
 
+  const [section, setSection] = useState("")
+
   return (
     <main className="relative bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen">
 
-      {/* Background Effects */}
+      {/* Animated Particle Background */}
       <ParticlesBackground />
       <GridBackground />
-
       {/* Navbar */}
-      <Navbar />
+      <Navbar setSection={setSection} />
 
-      {/* Page Content */}
-      <div className="pt-32 space-y-28">
+      <div className="pt-24">
 
-        <Hero />
+        {/* HOME */}
+        {section === "" && (
+          <PageTransition>
+            <>
+              <Hero />
+              <Impact />
+            </>
+          </PageTransition>
+        )}
 
-        <Impact />
+        {/* ABOUT */}
+        {section === "about" && (
+          <PageTransition>
+            <About />
+          </PageTransition>
+        )}
 
-        <About />
+        {/* VALUE */}
+        {section === "value" && (
+          <PageTransition>
+            <Value />
+          </PageTransition>
+        )}
 
-        <Value />
+        {/* PROJECTS */}
+        {section === "projects" && (
+          <PageTransition>
+            <Projects />
+          </PageTransition>
+        )}
 
-        <Projects />
+        {/* EXPERIENCE */}
+        {section === "experience" && (
+          <PageTransition>
+            <Experience />
+          </PageTransition>
+        )}
 
-        <Experience />
+        {/* SKILLS */}
+        {section === "skills" && (
+          <PageTransition>
+            <>
+              <SkillRadar />
+              <Skills />
+            </>
+          </PageTransition>
+        )}
 
-        <SkillRadar />
+        {/* TEACHING */}
+        {section === "teaching" && (
+          <PageTransition>
+            <Teaching />
+          </PageTransition>
+        )}
 
-        <Skills />
+        {/* EDUCATION */}
+        {section === "education" && (
+          <PageTransition>
+            <Education />
+          </PageTransition>
+        )}
 
-        <Teaching />
+        {/* ACHIEVEMENTS */}
+        {section === "achievements" && (
+          <PageTransition>
+            <Achievements />
+          </PageTransition>
+        )}
 
-        <Education />
-
-        <Resumes />
-
-        <Achievements />
-
-        <Contact />
+        {/* CONTACT */}
+        {section === "contact" && (
+          <PageTransition>
+            <Contact />
+          </PageTransition>
+        )}
 
       </div>
 

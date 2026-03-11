@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-export default function Navbar() {
+export default function Navbar({ setSection }: any) {
 
   const [active, setActive] = useState("")
   const [menuOpen, setMenuOpen] = useState(false)
@@ -22,22 +22,6 @@ export default function Navbar() {
     { name: "Contact", value: "contact" }
   ]
 
-  const handleScroll = (section: string) => {
-
-    if (section === "") {
-      window.scrollTo({ top: 0, behavior: "smooth" })
-      setActive("")
-      return
-    }
-
-    const element = document.getElementById(section)
-
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setActive(section)
-    }
-  }
-
   return (
 
     <header className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4">
@@ -49,13 +33,16 @@ export default function Navbar() {
 
           {/* Logo */}
           <span
-            onClick={() => handleScroll("")}
+            onClick={() => {
+              setSection("")
+              setActive("")
+            }}
             className="font-semibold text-white cursor-pointer"
           >
             NG
           </span>
 
-          {/* Hamburger Button */}
+          {/* Hamburger */}
           <button
             className="md:hidden text-white text-xl"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -70,7 +57,10 @@ export default function Navbar() {
 
               <motion.button
                 key={link.name}
-                onClick={() => handleScroll(link.value)}
+                onClick={() => {
+                  setSection(link.value)
+                  setActive(link.value)
+                }}
                 className="relative text-gray-300 hover:text-white transition"
               >
 
@@ -99,7 +89,8 @@ export default function Navbar() {
               <button
                 key={link.name}
                 onClick={() => {
-                  handleScroll(link.value)
+                  setSection(link.value)
+                  setActive(link.value)
                   setMenuOpen(false)
                 }}
                 className="text-gray-300 hover:text-white text-left"

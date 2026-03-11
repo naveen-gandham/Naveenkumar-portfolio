@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 export default function Navbar({ setSection }: any) {
 
   const [active, setActive] = useState("")
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const links = [
     { name: "Home", value: "" },
@@ -16,62 +17,81 @@ export default function Navbar({ setSection }: any) {
     { name: "Skills", value: "skills" },
     { name: "Teaching", value: "teaching" },
     { name: "Education", value: "education" },
+    { name: "Resumes", value: "resumes" },
     { name: "Achievements", value: "achievements" },
     { name: "Contact", value: "contact" }
   ]
-
-  const handleMove = (e: any) => {
-
-    const rect = e.currentTarget.getBoundingClientRect()
-
-    const x = e.clientX - rect.left - rect.width / 2
-    const y = e.clientY - rect.top - rect.height / 2
-
-    e.currentTarget.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`
-
-  }
-
-  const handleLeave = (e: any) => {
-    e.currentTarget.style.transform = "translate(0px,0px)"
-  }
 
   return (
 
     <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4">
 
-      <div className="backdrop-blur-lg bg-black/60 border border-gray-800 rounded-full px-5 md:px-10 py-3 md:py-4 shadow-xl max-w-full overflow-x-auto">
+      <div className="backdrop-blur-lg bg-black/60 border border-gray-800 rounded-full px-5 md:px-10 py-3 md:py-4 shadow-xl w-full md:w-auto">
 
-        <nav className="flex items-center gap-5 md:gap-8 text-sm whitespace-nowrap">
+        {/* Top Row */}
+        <div className="flex justify-between items-center">
 
-          {links.map((link) => (
+          {/* Logo */}
+          <span className="font-semibold text-white">NG</span>
 
-            <motion.button
-              key={link.name}
-              onClick={() => {
-                setSection(link.value)
-                setActive(link.value)
-              }}
-              onMouseMove={handleMove}
-              onMouseLeave={handleLeave}
-              className="relative text-gray-300 hover:text-white transition"
-            >
+          {/* Hamburger Button */}
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
 
-              {link.name}
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center gap-8 text-sm">
 
-              {active === link.value && (
+            {links.map((link) => (
 
-                <motion.div
-                  layoutId="navIndicator"
-                  className="absolute left-0 -bottom-2 h-[2px] w-full bg-red-500"
-                />
+              <motion.button
+                key={link.name}
+                onClick={() => {
+                  setSection(link.value)
+                  setActive(link.value)
+                }}
+                className="relative text-gray-300 hover:text-white transition"
+              >
 
-              )}
+                {link.name}
 
-            </motion.button>
+                {active === link.value && (
+                  <motion.div
+                    layoutId="navIndicator"
+                    className="absolute left-0 -bottom-2 h-[2px] w-full bg-red-500"
+                  />
+                )}
 
-          ))}
+              </motion.button>
 
-        </nav>
+            ))}
+
+          </nav>
+
+        </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="flex flex-col mt-4 gap-4 md:hidden">
+
+            {links.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => {
+                  setSection(link.value)
+                  setMenuOpen(false)
+                }}
+                className="text-gray-300 hover:text-white text-left"
+              >
+                {link.name}
+              </button>
+            ))}
+
+          </div>
+        )}
 
       </div>
 

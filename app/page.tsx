@@ -19,6 +19,7 @@ import Footer from "../components/Footer"
 import ParticlesBackground from "../components/ParticlesBackground"
 import PageTransition from "../components/PageTransition"
 import GridBackground from "../components/GridBackground"
+import Resumes from "../components/Resumes"   // NEW
 
 export default function Home() {
 
@@ -27,9 +28,10 @@ export default function Home() {
   return (
     <main className="relative bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen">
 
-      {/* Animated Particle Background */}
+      {/* Animated Backgrounds */}
       <ParticlesBackground />
       <GridBackground />
+
       {/* Navbar */}
       <Navbar setSection={setSection} />
 
@@ -94,6 +96,13 @@ export default function Home() {
         {section === "education" && (
           <PageTransition>
             <Education />
+          </PageTransition>
+        )}
+
+        {/* RESUMES (NEW SECTION) */}
+        {section === "resumes" && (
+          <PageTransition>
+            <Resumes />
           </PageTransition>
         )}
 

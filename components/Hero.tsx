@@ -110,7 +110,7 @@ export default function Hero() {
                 bg-white/5
                 border border-gray-700
                 rounded-2xl
-                p-4
+                pt-6 pb-4 px-4
                 shadow-[0_20px_80px_rgba(255,0,0,0.25)]
                 transition duration-300
                 hover:scale-105
@@ -119,7 +119,7 @@ export default function Hero() {
             >
 
               {/* Status Badge */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-xs px-3 py-1 rounded-full backdrop-blur-sm animate-pulse">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-xs px-3 py-1 rounded-full backdrop-blur-sm animate-pulse">
                 🟢 Available for Opportunities
               </div>
 

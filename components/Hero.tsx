@@ -68,50 +68,6 @@ export default function Hero() {
             to build industry-ready developers.
           </p>
 
-          {/* Resume + Action Buttons */}
-
-          <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-10">
-
-            <a
-              href="/resumes/naveen-general.pdf"
-              target="_blank"
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              General Resume
-            </a>
-
-            <a
-              href="/resumes/naveen-java.pdf"
-              target="_blank"
-              className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              Java / FullStack Resume
-            </a>
-
-            <a
-              href="/resumes/naveen-ai-trainer.pdf"
-              target="_blank"
-              className="border border-gray-600 hover:border-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              AI Trainer Resume
-            </a>
-
-            <a
-              href="#projects"
-              className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              View Projects
-            </a>
-
-            <a
-              href="#contact"
-              className="border border-gray-600 hover:border-white px-6 py-3 rounded-lg font-medium transition"
-            >
-              Contact Me
-            </a>
-
-          </div>
-
           {/* Stats */}
 
           <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12">

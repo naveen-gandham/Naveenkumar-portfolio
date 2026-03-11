@@ -47,7 +47,7 @@ export default function Hero() {
 
             <Typewriter
               words={[
-                "Software Engineer",
+                " Former Software Engineer",
                 "AI Trainer",
                 "Full Stack Developer"
               ]}
@@ -94,23 +94,38 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
 
-        <div className="flex justify-center mt-10 md:mt-0">
+        <div className="flex justify-center md:justify-end mt-10 md:mt-0">
 
-          <div className="relative w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
 
-            {/* Glow */}
+            {/* Outer Glow */}
 
-            <div className="absolute w-48 md:w-60 lg:w-72 h-48 md:h-60 lg:h-72 bg-red-600 blur-3xl opacity-30 rounded-full"></div>
+            <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
 
-            {/* Profile Photo */}
+            {/* Glass Card */}
 
-            <Image
-              src="/passport.jpg"
-              alt="Naveen Kumar Gandham"
-              width={180}
-              height={180}
-              className="rounded-xl relative z-10 w-[150px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-auto"
-            />
+            <div className="
+              relative
+              backdrop-blur-sm
+              bg-white/5
+              border border-gray-700
+              rounded-2xl
+              p-4
+              shadow-[0_20px_80px_rgba(255,0,0,0.25)]
+              transition duration-300
+              hover:scale-105
+            ">
+
+              <Image
+                src="/passport.png"
+                alt="Naveen Kumar Gandham"
+                width={260}
+                height={260}
+                priority
+                className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
+              />
+
+            </div>
 
           </div>
 

@@ -20,6 +20,7 @@ import Footer from "../components/Footer"
 import ParticlesBackground from "../components/ParticlesBackground"
 import PageTransition from "../components/PageTransition"
 import GridBackground from "../components/GridBackground"
+import ScrollProgress from "../components/ScrollProgress"
 
 export default function Home() {
 
@@ -33,7 +34,7 @@ export default function Home() {
       <GridBackground />
       {/* Navbar */}
       <Navbar setSection={setSection} />
-
+      <ScrollProgress />
       <div className="pt-24">
 
         {/* HOME */}

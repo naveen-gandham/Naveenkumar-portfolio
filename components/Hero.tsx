@@ -94,50 +94,52 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
 
-        <div className="flex justify-center md:justify-end mt-10 md:mt-0">
+{/* RIGHT SIDE */}
 
-          <div className="relative flex items-center justify-center">
+<div className="flex justify-center md:justify-end mt-10 md:mt-0">
 
-            {/* Glow background */}
-            <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
+  <div className="relative flex items-center justify-center">
 
-            {/* Card */}
-            <div
-              className="
-                relative
-                z-10
-                backdrop-blur-sm
-                bg-white/5
-                border border-gray-700
-                rounded-2xl
-                pt-6 pb-4 px-4
-                shadow-[0_20px_80px_rgba(255,0,0,0.25)]
-                transition duration-300
-                hover:scale-105
-                hover:shadow-[0_30px_100px_rgba(255,0,0,0.4)]
-              "
-            >
+    {/* Status Badge */}
+    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-xs px-3 py-1 rounded-full backdrop-blur-sm animate-pulse">
+      🟢 Open to Opportunities
+    </div>
 
-              {/* Status Badge */}
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-green-500/20 border border-green-500 text-green-400 text-xs px-3 py-1 rounded-full backdrop-blur-sm animate-pulse">
-                🟢 Available for Opportunities
-              </div>
+    {/* Glow background */}
+    <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
 
-              {/* Profile Image */}
-              <Image
-                src="/passport.jpg"
-                alt="Naveen Kumar Gandham"
-                width={260}
-                height={260}
-                priority
-                className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
-              />
+    {/* Card */}
+    <div
+      className="
+        relative
+        z-10
+        backdrop-blur-sm
+        bg-white/5
+        border border-gray-700
+        rounded-2xl
+        p-4
+        shadow-[0_20px_80px_rgba(255,0,0,0.25)]
+        transition duration-300
+        hover:scale-105
+        hover:shadow-[0_30px_100px_rgba(255,0,0,0.4)]
+      "
+    >
 
-            </div>
+      {/* Profile Image */}
+      <Image
+        src="/passport.jpg"
+        alt="Naveen Kumar Gandham"
+        width={260}
+        height={260}
+        priority
+        className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
+      />
 
-          </div>
+    </div>
 
-        </div>
+  </div>
+
+</div>
 
       </div>
 

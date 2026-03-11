@@ -44,7 +44,7 @@ const values = [
 
 export default function Value() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 md:py-24">
+    <section id="value" className="py-24 px-6 max-w-6xl mx-auto">
 
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16">
         What I Can Help Companies With

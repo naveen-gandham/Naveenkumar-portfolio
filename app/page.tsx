@@ -97,6 +97,12 @@ export default function Home() {
             <Education />
           </PageTransition>
         )}
+{/* RESUMES */}
+{section === "resumes" && (
+  <PageTransition>
+    <Resumes />
+  </PageTransition>
+)}
 
         {/* ACHIEVEMENTS */}
         {section === "achievements" && (

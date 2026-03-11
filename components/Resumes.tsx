@@ -1,78 +1,43 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { FaDownload, FaRobot, FaCode, FaChalkboardTeacher } from "react-icons/fa"
-
 export default function Resumes() {
-
-  const resumes = [
-    {
-      title: "General Software Engineer Resume",
-      icon: <FaCode size={28} />,
-      file: "/resumes/naveen-general.pdf"
-    },
-    {
-      title: "Java / Full Stack Developer Resume",
-      icon: <FaCode size={28} />,
-      file: "/resumes/naveen-java.pdf"
-    },
-    {
-      title: "AI Trainer Resume",
-      icon: <FaRobot size={28} />,
-      file: "/resumes/naveen-ai-trainer.pdf"
-    },
-    {
-      title: "Technical Trainer Resume",
-      icon: <FaChalkboardTeacher size={28} />,
-      file: "/resumes/naveen-dotnet.pdf"
-    },
-    {
-      title: "Product Developer Resume",
-      icon: <FaCode size={28} />,
-      file: "/resumes/naveen-product.pdf"
-    }
-  ]
-
   return (
-    <section id="resumes" className="py-24 px-6 max-w-6xl mx-auto text-center">
 
-      <h2 className="text-4xl font-bold mb-16">
-        Download My Resume
+    <section className="py-24 px-6 max-w-6xl mx-auto text-center">
+
+      <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        Download My Resumes
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-6">
 
-        {resumes.map((resume, i) => (
+        <a
+          href="/resumes/naveen-general.pdf"
+          target="_blank"
+          className="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-lg font-medium transition"
+        >
+          General Resume
+        </a>
 
-          <motion.div
-            key={i}
-            whileHover={{ y: -8 }}
-            className="bg-[#0b1625] border border-gray-800 rounded-xl p-8 group transition"
-          >
+        <a
+          href="/resumes/naveen-java.pdf"
+          target="_blank"
+          className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-6 py-4 rounded-lg font-medium transition"
+        >
+          Java / FullStack Resume
+        </a>
 
-            <div className="text-red-400 flex justify-center mb-4">
-              {resume.icon}
-            </div>
-
-            <h3 className="text-lg font-semibold mb-6">
-              {resume.title}
-            </h3>
-
-            <a
-              href={resume.file}
-              target="_blank"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg text-sm font-medium transition"
-            >
-              <FaDownload />
-              Download
-            </a>
-
-          </motion.div>
-
-        ))}
+        <a
+          href="/resumes/naveen-ai-trainer.pdf"
+          target="_blank"
+          className="border border-gray-600 hover:border-white px-6 py-4 rounded-lg font-medium transition"
+        >
+          AI Trainer Resume
+        </a>
 
       </div>
 
     </section>
+
   )
 }

@@ -94,42 +94,41 @@ export default function Hero() {
 
         {/* RIGHT SIDE */}
 
-        <div className="flex justify-center md:justify-end mt-10 md:mt-0">
+<div className="flex justify-center md:justify-end mt-10 md:mt-0">
 
-          <div className="relative flex items-center justify-center">
+  <div className="relative flex items-center justify-center">
 
-            {/* Outer Glow */}
+    {/* Glow background */}
+    <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
 
-            <div className="absolute w-[260px] md:w-[340px] lg:w-[420px] h-[260px] md:h-[340px] lg:h-[420px] bg-red-600/20 blur-3xl rounded-full"></div>
+    {/* Card */}
+    <div className="
+      relative
+      z-10
+      backdrop-blur-sm
+      bg-white/5
+      border border-gray-700
+      rounded-2xl
+      p-4
+      shadow-[0_20px_80px_rgba(255,0,0,0.25)]
+      transition duration-300
+      hover:scale-105 hover:shadow-[0_30px_100px_rgba(255,0,0,0.4)]
+    ">
 
-            {/* Glass Card */}
+      <Image
+        src="/passport.jpg"
+        alt="Naveen Kumar Gandham"
+        width={260}
+        height={260}
+        priority
+        className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
+      />
 
-            <div className="
-              relative
-              backdrop-blur-sm
-              bg-white/5
-              border border-gray-700
-              rounded-2xl
-              p-4
-              shadow-[0_20px_80px_rgba(255,0,0,0.25)]
-              transition duration-300
-              hover:scale-105
-            ">
+    </div>
 
-              <Image
-                src="/passport.jpg"
-                alt="Naveen Kumar Gandham"
-                width={260}
-                height={260}
-                priority
-                className="rounded-xl w-[200px] sm:w-[230px] md:w-[260px] lg:w-[300px] h-auto"
-              />
+  </div>
 
-            </div>
-
-          </div>
-
-        </div>
+</div>
 
       </div>
 

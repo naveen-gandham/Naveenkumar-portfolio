@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Typewriter } from "react-simple-typewriter"
 import Image from "next/image"
+import Counter from "./Counter"
 
 export default function Hero() {
 
@@ -73,17 +74,23 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12">
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-red-500">3000+</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-red-500">
+  <Counter end={3000} />+
+</h3>
               <p className="text-gray-400 text-sm">Students Trained</p>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-red-500">4.6 / 5</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-red-500">
+  <Counter end={4.6} decimals={1} /> / 5
+</h3>
               <p className="text-gray-400 text-sm">Student Rating</p>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-bold text-red-500">3+</h3>
+             <h3 className="text-xl md:text-2xl font-bold text-red-500">
+  <Counter end={3} />+
+</h3>
               <p className="text-gray-400 text-sm">Industry Roles</p>
             </div>
 

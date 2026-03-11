@@ -117,7 +117,7 @@ export default function Hero() {
             ">
 
               <Image
-                src="/passport.png"
+                src="/passport.jpg"
                 alt="Naveen Kumar Gandham"
                 width={260}
                 height={260}

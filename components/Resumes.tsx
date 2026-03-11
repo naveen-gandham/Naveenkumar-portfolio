@@ -34,7 +34,7 @@ export default function Resumes() {
   ]
 
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto text-center">
+    <section id="resumes" className="py-24 px-6 max-w-6xl mx-auto text-center">
 
       <h2 className="text-4xl font-bold mb-16">
         Download My Resume

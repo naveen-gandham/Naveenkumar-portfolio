@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-export default function Navbar({ setSection }: any) {
+export default function Navbar() {
 
   const [active, setActive] = useState("")
   const [menuOpen, setMenuOpen] = useState(false)
@@ -22,21 +22,42 @@ export default function Navbar({ setSection }: any) {
     { name: "Contact", value: "contact" }
   ]
 
+  const handleScroll = (section: string) => {
+
+    if (section === "") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      setActive("")
+      return
+    }
+
+    const element = document.getElementById(section)
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      setActive(section)
+    }
+  }
+
   return (
 
-    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4">
+    <header className="fixed top-6 md:top-8 left-1/2 -translate-x-1/2 z-50 w-full flex justify-center px-4">
 
-      <div className="backdrop-blur-lg bg-black/60 border border-gray-800 rounded-full px-5 md:px-10 py-3 md:py-4 shadow-xl w-full md:w-auto">
+      <div className="backdrop-blur-xl bg-black/60 border border-gray-800 rounded-full px-6 md:px-10 py-3 md:py-4 shadow-xl max-w-6xl w-full">
 
         {/* Top Row */}
         <div className="flex justify-between items-center">
 
           {/* Logo */}
-          <span className="font-semibold text-white">NG</span>
+          <span
+            onClick={() => handleScroll("")}
+            className="font-semibold text-white cursor-pointer"
+          >
+            NG
+          </span>
 
           {/* Hamburger Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white text-xl"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
@@ -49,10 +70,7 @@ export default function Navbar({ setSection }: any) {
 
               <motion.button
                 key={link.name}
-                onClick={() => {
-                  setSection(link.value)
-                  setActive(link.value)
-                }}
+                onClick={() => handleScroll(link.value)}
                 className="relative text-gray-300 hover:text-white transition"
               >
 
@@ -81,7 +99,7 @@ export default function Navbar({ setSection }: any) {
               <button
                 key={link.name}
                 onClick={() => {
-                  setSection(link.value)
+                  handleScroll(link.value)
                   setMenuOpen(false)
                 }}
                 className="text-gray-300 hover:text-white text-left"

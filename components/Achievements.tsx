@@ -42,7 +42,7 @@ export default function Achievements() {
 
   return (
 
-    <section className="py-28 px-6 max-w-5xl mx-auto">
+    <section id="achievements" className="py-24 px-6 max-w-6xl mx-auto">
 
       <h2 className="text-4xl font-bold text-center mb-12">
         Developer Impact Console

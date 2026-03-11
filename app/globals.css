@@ -66,4 +66,6 @@ html {
 .animate-float3 {
   animation: float3 6s ease-in-out infinite;
 }
-
+html {
+  scroll-behavior: smooth;
+}

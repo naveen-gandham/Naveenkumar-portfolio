@@ -32,7 +32,7 @@ export default function Education() {
   ]
 
   return (
-    <section className="py-20 md:py-24 px-6 sm:px-8 max-w-6xl mx-auto text-center">
+    <section id="education" className="py-24 px-6 max-w-6xl mx-auto text-center">
 
       <h2 className="text-3xl md:text-4xl font-bold mb-14 md:mb-20">
         Education

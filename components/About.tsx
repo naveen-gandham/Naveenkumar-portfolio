@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section className="py-20 md:py-24 px-6 sm:px-8 max-w-7xl mx-auto text-center">
+    <section id="about" className="py-24 px-6 max-w-5xl mx-auto">
 
       {/* TITLE */}
       <motion.h2

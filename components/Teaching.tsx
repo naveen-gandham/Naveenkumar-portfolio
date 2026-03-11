@@ -40,7 +40,7 @@ export default function Teaching() {
   ]
 
   return (
-    <section className="py-20 md:py-24 px-6 sm:px-8 max-w-7xl mx-auto text-center">
+    <section id="teaching" className="py-24 px-6 max-w-7xl mx-auto text-center">
 
       {/* Title */}
 
